@@ -1,0 +1,95 @@
+/* Light */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MyriadPro-Light.otf') format('opentype');
+    font-weight: 300;
+    /* Light weight */
+    font-style: normal;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-REGULAR.OTF') format('opentype');
+    font-weight: 400;
+    /* Regular weight */
+    font-style: normal;
+}
+
+/* SemiBold */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-SEMIBOLD.OTF') format('opentype');
+    font-weight: 600;
+    /* SemiBold weight */
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-BOLD.OTF') format('opentype');
+    font-weight: 700;
+    /* Bold weight */
+    font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-BOLDCONDIT.OTF') format('opentype');
+    font-weight: 300;
+    /* Light weight */
+    font-style: italic;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-SEMIBOLDIT.OTF') format('opentype');
+    font-weight: 600;
+    /* SemiBold weight */
+    font-style: italic;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-BOLDIT.OTF') format('opentype');
+    font-weight: 700;
+    /* Bold weight */
+    font-style: italic;
+}
+
+/* Condensed Regular */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-COND.OTF') format('opentype');
+    font-weight: 400;
+    /* Regular weight */
+    font-style: normal;
+    font-stretch: condensed;
+    /* Condensed style */
+}
+
+/* Condensed Italic */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-CONDIT.OTF') format('opentype');
+    font-weight: 400;
+    /* Regular weight */
+    font-style: italic;
+    font-stretch: condensed;
+    /* Condensed style */
+}
+
+/* Bold Condensed */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/myriad-pro/MYRIADPRO-BOLDCOND.OTF') format('opentype');
+    font-weight: 700;
+    /* Bold weight */
+    font-style: normal;
+    font-stretch: condensed;
+    /* Condensed style */
+}
