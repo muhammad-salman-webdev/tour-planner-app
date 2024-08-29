@@ -147,6 +147,7 @@ body {
                     z-index: 5;
                     background: orange;
                     width: 500px;
+                    max-width: 96vw;
                     width: 150%;
                     position: absolute;
                     left: 50%;
@@ -399,6 +400,7 @@ body {
     max-width: 1432px;
     margin: 50px auto 100px;
 
+    /* display: none; */
     .card-container {
         .b-card {
             height: 245px;
