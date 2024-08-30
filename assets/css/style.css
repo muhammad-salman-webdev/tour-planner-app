@@ -538,6 +538,126 @@ body {
                     }
                 }
             }
+
+            &.persons_select {
+                .select_popup-container {
+                    width: 485px;
+
+                    .visiters-container {
+                        .added-visiters {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            .visiter {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+
+                                .del-btn {
+                                    min-width: 40px;
+                                    width: 40px;
+                                    aspect-ratio: 1/1;
+                                    border-radius: 10px;
+                                    font-size: 18px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    outline: none;
+                                    box-shadow: 0px 4px 25px 0px #0000001A;
+                                    border: 1px solid #CDCCDD;
+                                    color: #000000;
+                                    background: white;
+                                }
+
+                                .visiter-count {
+                                    font-family: 'Myriad Pro';
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                    line-height: 19.2px;
+                                    text-align: left;
+                                    color: #4B4B4B;
+                                    margin: 0;
+                                    min-width: max-content;
+                                }
+
+                                .visiter-age {
+                                    width: 100%;
+                                    margin: 0;
+                                    display: flex;
+                                    align-items: center;
+                                    background: #FFFFFF;
+                                    outline: none;
+                                    border: 1px solid #CDCCDD;
+                                    box-shadow: 0px 4px 25px 0px #0000001A;
+                                    height: 40px;
+                                    border-radius: 10px;
+                                    padding: 0 10px;
+
+                                    &::-webkit-inner-spin-button,
+                                    &::-webkit-outer-spin-button {
+                                        display: none;
+                                    }
+                                }
+
+                                .visiter-gender {
+                                    display: flex;
+                                    gap: 4px;
+
+                                    div {
+                                        font-family: 'Myriad Pro';
+                                        font-size: 15px;
+                                        font-weight: 400;
+                                        line-height: 18px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        height: 40px;
+                                        border-radius: 10px;
+                                        border: 1px solid #CDCCDD;
+                                        color: #4B4B4B;
+                                        padding: 0 16px;
+                                        box-shadow: 0px 4px 25px 0px #0000001A;
+                                        transition: all .2s ease;
+
+                                        &.blue {
+                                            background: #1285EF;
+                                            color: white;
+                                        }
+                                    }
+
+                                    &.add {
+                                        input {
+                                            display: none;
+                                        }
+
+                                        label {
+                                            cursor: pointer;
+                                        }
+
+                                        label:has(input:checked) div {
+                                            color: #ffffff;
+                                            background: #ea7423;
+                                        }
+                                    }
+                                }
+
+                                &.visiter-add {
+                                    border: 1px var(--orange);
+                                    border-style: dashed;
+                                    padding: 10px;
+                                    border-radius: 10px;
+                                    background: #E176000F;
+                                }
+                            }
+                        }
+                    }
+
+                    .popup-btns {
+                        margin: 0 auto;
+                    }
+                }
+            }
         }
     }
 }

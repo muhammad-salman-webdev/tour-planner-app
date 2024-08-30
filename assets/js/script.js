@@ -40,7 +40,7 @@ selecterElems.forEach((selecterElem, index) => {
     managePopup(toggleBox, popup, overlay)
   );
 
-  if (index === 1) {
+  if (index === 2) {
     toggleBox.click();
   }
 });
