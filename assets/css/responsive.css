@@ -143,4 +143,27 @@
     .property_section .card-container .b-card .card-main .card-head .header-details h2 {
         font-size: 24px;
     }
+
+    .search_main {
+        & .search_container {
+            & .search_item {
+                &.time_select {
+                    & .select_popup-container {
+                        padding: 20px;
+
+                        .popup-footer {
+                            justify-content: space-between;
+                            align-items: start;
+                            gap: 20px;
+                            flex-direction: column;
+
+                            .popup-btns {
+                                margin-left: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
