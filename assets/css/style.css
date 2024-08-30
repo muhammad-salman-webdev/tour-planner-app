@@ -18,6 +18,126 @@ body {
     padding: 50px 0;
 }
 
+.custom-calendar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .calendar-actions {
+        position: absolute;
+        /* display: none; */
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            aspect-ratio: 1/1;
+            border-radius: 8px;
+            border: 1px solid #DCE0E5;
+            outline: none;
+            background: white;
+            color: #14181F;
+        }
+    }
+
+    .calendar-months-container {
+        overflow: hidden;
+
+        .calendar-months {
+            display: flex;
+            gap: 26px;
+
+            .calendar-month {
+                display: flex;
+                flex-direction: column;
+                min-width: 250px;
+                width: 250px;
+                user-select: none;
+
+                .month-name {
+                    text-align: center;
+                    font-family: 'Inter';
+                    font-size: 15px;
+                    font-weight: 500;
+                    color: #14181F;
+                    height: 32px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 10px;
+                }
+
+                .day-names,
+                .month-days {
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                }
+
+                .day-names {
+                    margin: 10px 0;
+
+                    span {
+                        font-family: 'Inter';
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 21px;
+                        text-align: center;
+                        color: #6F7C8E;
+                    }
+                }
+
+                .month-days {
+                    row-gap: 2px;
+
+                    button {
+                        border: none;
+                        outline: none;
+                        font-family: 'Inter';
+                        font-size: 15px;
+                        font-weight: 500;
+                        line-height: 21px;
+                        text-align: center;
+                        aspect-ratio: 1/1;
+                        background: white;
+
+                        &:nth-child(12) {
+                            background: #1285EF;
+                            color: white;
+                            border-radius: 8px 0px 0px 8px;
+                        }
+
+                        &:nth-child(13),
+                        &:nth-child(14),
+                        &:nth-child(15),
+                        &:nth-child(16),
+                        &:nth-child(17) {
+                            background: #1285EF24;
+                        }
+
+                        &:nth-child(18) {
+                            background: #1285EF;
+                            color: white;
+                            border-radius: 0px 8px 8px 0px;
+                        }
+
+                        &.prev-month,
+                        &.next-month {
+                            color: #6F7C8E;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* Search Section */
 .search_main {
     width: 96%;
@@ -159,6 +279,7 @@ body {
                     box-shadow: 0px 20px 50px 0px #00000066;
                     transition: all .2s ease;
                     display: none;
+                    opacity: 0;
 
                     &.show {
                         display: block;
@@ -166,6 +287,7 @@ body {
 
                     &.animate {
                         top: 110px;
+                        opacity: 1;
                     }
 
                     .select_popup-body {
@@ -390,6 +512,32 @@ body {
                     }
                 }
             }
+
+            &.time_select {
+                .select_popup-container {
+                    width: 590px;
+                    padding: 20px 32px;
+
+                    .calendar-selection {
+                        border-top: 1px solid #DCE0E5;
+                        border-bottom: 1px solid #DCE0E5;
+                        padding: 20px 0 10px;
+                    }
+
+                    .popup-footer {
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .selected-days {
+                            font-family: 'Myriad Pro';
+                            font-size: 22px;
+                            font-weight: 600;
+                            line-height: 33px;
+                            color: #08003B;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -403,7 +551,7 @@ body {
     /* display: none; */
     .card-container {
         .b-card {
-            height: 245px;
+            height: 225px;
             position: relative;
 
             .card-main {
