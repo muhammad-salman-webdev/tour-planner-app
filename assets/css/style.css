@@ -106,8 +106,7 @@ body {
                         text-align: center;
                         aspect-ratio: 1/1;
                         background: white;
-
-                        &:nth-child(12) {
+                        /* &:nth-child(12) {
                             background: #1285EF;
                             color: white;
                             border-radius: 8px 0px 0px 8px;
@@ -130,6 +129,37 @@ body {
                         &.prev-month,
                         &.next-month {
                             color: #6F7C8E;
+                        } */
+                    }
+                }
+
+                &:nth-child(1) {
+                    .month-days {
+                        button {
+                            &:nth-child(12) {
+                                background: #1285EF;
+                                color: white;
+                                border-radius: 8px 0px 0px 8px;
+                            }
+
+                            &:nth-child(13),
+                            &:nth-child(14),
+                            &:nth-child(15),
+                            &:nth-child(16),
+                            &:nth-child(17) {
+                                background: #1285EF24;
+                            }
+
+                            &:nth-child(18) {
+                                background: #1285EF;
+                                color: white;
+                                border-radius: 0px 8px 8px 0px;
+                            }
+
+                            &.prev-month,
+                            &.next-month {
+                                color: #6F7C8E;
+                            }
                         }
                     }
                 }
@@ -718,12 +748,141 @@ body {
                             }
                         }
 
-                        h2 {
-                            margin-top: 8px;
-                            font-size: 30px;
-                            font-weight: 700;
-                            color: #29289B;
-                            text-align: right;
+                        &>.cost-details {
+                            display: flex;
+                            align-items: end;
+                            margin: 8px 0 0 0;
+                            gap: 7px;
+
+                            i {
+                                margin-bottom: 6px;
+                                font-size: 16px;
+                                color: var(--orange);
+                                cursor: pointer;
+                            }
+
+                            h2 {
+                                margin: 0 0 0;
+                                font-size: 30px;
+                                font-weight: 700;
+                                color: #29289B;
+                                text-align: right;
+                            }
+
+                            .popup {
+                                position: absolute;
+                                box-shadow: 0px 20px 150px 0px #00000066;
+                                background: #FFFFFF;
+                                border-radius: 20px;
+                                right: 160px;
+                                min-width: 250px;
+                                top: 150px;
+                                opacity: 0;
+                                transition: all .3s ease;
+                                left: 14px;
+                                z-index: 2;
+                                display: none;
+
+                                &.show {
+                                    display: block;
+                                }
+
+                                &.animate {
+                                    top: 90px;
+                                    opacity: 1;
+                                }
+
+                                .popup-header {
+                                    padding: 16px 20px 6px;
+
+                                    h4 {
+                                        margin: 0;
+                                        font-family: 'Myriad Pro';
+                                        font-size: 21px;
+                                        font-weight: 700;
+                                        line-height: 25.2px;
+                                        text-align: left;
+                                        color: #29289B;
+                                    }
+
+                                    &>p {
+                                        font-family: 'Myriad Pro';
+                                        font-size: 18px;
+                                        font-weight: 400;
+                                        line-height: 21.6px;
+                                        text-align: left;
+                                        color: #4B4B4B;
+                                        margin: 0;
+                                        margin-top: 6px;
+                                    }
+
+                                    &>.close_icon {
+                                        position: absolute;
+                                        right: 14px;
+                                        color: #7E7EB5;
+                                        top: 14px;
+                                        font-size: 22px;
+                                        transition: all .3s ease;
+
+                                        &:hover {
+                                            color: #5252a7;
+                                        }
+                                    }
+                                }
+
+                                .popup-details {
+                                    padding-left: 20px;
+                                    padding-right: 10px;
+
+                                    ul {
+                                        max-height: 190px;
+                                        overflow: auto;
+                                        margin: 0 0 10px 0;
+                                        padding: 0;
+                                        padding: 10px 14px 4px 0;
+
+                                        &::-webkit-scrollbar {
+                                            width: 8px;
+                                            background: #BFBEBE;
+                                            border-radius: 8px;
+                                        }
+
+                                        &::-webkit-scrollbar-thumb {
+                                            border-radius: 8px;
+                                            background: #29289B;
+                                            width: 8px;
+                                        }
+
+                                        li {
+                                            width: 100%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            padding: 10px 0;
+                                            border-top: 1px solid #CACACA;
+
+                                            p {
+                                                margin: 0;
+                                                font-family: 'Myriad Pro';
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                                line-height: 19.2px;
+                                                text-align: left;
+                                                color: #4B4B4B;
+                                            }
+
+                                            span {
+                                                font-family: 'Myriad Pro';
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                                line-height: 19.2px;
+                                                text-align: right;
+                                                color: #4B4B4B;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -734,6 +893,7 @@ body {
                     align-items: center;
                     gap: 6px;
                     margin: 12px 0;
+                    cursor: pointer;
 
                     i {
                         font-size: 20px;
@@ -750,10 +910,42 @@ body {
 
                 /* detiails */
                 .details {
-                    display: grid;
-                    grid-template-rows: 0fr;
+                    display: none;
                     overflow: hidden;
                     transition: all .4s ease;
+                    position: absolute;
+                    top: 175px;
+                    left: 14px;
+                    right: 14px;
+                    background: white;
+                    border: 1px solid #DADADA;
+                    box-shadow: 0px 4px 44px 0px #00000033;
+                    border-radius: 20px;
+                    padding: 14px 20px;
+                    opacity: 0;
+
+                    &.show {
+                        display: grid;
+                    }
+
+                    &.animate {
+                        opacity: 1;
+                        top: 135px;
+                    }
+
+                    .close-icon {
+                        position: absolute;
+                        top: 10px;
+                        right: 14px;
+                        font-size: 18px;
+                        color: #7E7EB5;
+                        transition: all .3s ease;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: #5151af;
+                        }
+                    }
 
                     &>div {
                         min-height: 0;
@@ -767,6 +959,7 @@ body {
 
                         ul {
                             padding-left: 24px;
+                            margin: 0;
 
                             li {
                                 color: #434343;
@@ -820,12 +1013,8 @@ body {
 
                     .card-head {
                         .img {
-                            width: 100px
+                            transform: scale(1.2);
                         }
-                    }
-
-                    .details {
-                        grid-template-rows: 1fr;
                     }
                 }
             }

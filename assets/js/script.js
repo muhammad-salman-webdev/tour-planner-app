@@ -40,3 +40,45 @@ selecterElems.forEach((selecterElem, index) => {
     managePopup(toggleBox, popup, overlay)
   );
 });
+
+// --------
+const productCards = document.querySelectorAll(
+  ".property_section .card-container .card-main"
+);
+
+function manageSmallPopup(popupBtn, popup) {
+  if (popupBtn.classList.contains("active")) {
+    popup.classList.remove("animate");
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 200);
+  } else {
+    popup.classList.add("show");
+    setTimeout(() => {
+      popup.classList.add("animate");
+    }, 10);
+  }
+  popupBtn.classList.toggle("active");
+}
+
+productCards.forEach((card, index) => {
+  // Managing Small Popup
+  const popupBtn = card.querySelector(".note");
+  const popup = card.querySelector(".details");
+  const popupCBtn = popup.querySelector(".close-icon");
+
+  popupBtn.addEventListener("click", () => manageSmallPopup(popupBtn, popup));
+  popupCBtn.addEventListener("click", () => manageSmallPopup(popupBtn, popup));
+
+  // Managing Details Popup
+  const dPopupBtn = card.querySelector(".card-head .cost-details > i");
+  const dPopup = card.querySelector(".card-head .cost-details > .popup");
+  const dPopupCBtn = dPopup.querySelector(".popup-header > .close_icon");
+
+  dPopupBtn.addEventListener("click", () =>
+    manageSmallPopup(dPopupBtn, dPopup)
+  );
+  dPopupCBtn.addEventListener("click", () =>
+    manageSmallPopup(dPopupBtn, dPopup)
+  );
+});
