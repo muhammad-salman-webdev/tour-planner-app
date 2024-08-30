@@ -39,8 +39,4 @@ selecterElems.forEach((selecterElem, index) => {
   closeBtn.addEventListener("click", () =>
     managePopup(toggleBox, popup, overlay)
   );
-
-  if (index === 2) {
-    toggleBox.click();
-  }
 });
