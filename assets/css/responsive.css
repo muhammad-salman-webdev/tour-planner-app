@@ -60,7 +60,7 @@
 
 @media (max-width: 1199px) {
     .property_section .card-container .b-card {
-        height: 245px;
+        height: 221px;
 
         .card-main .btns {
             flex-wrap: nowrap;
@@ -111,7 +111,7 @@
 
 @media (max-width: 767px) {
     .property_section .card-container .b-card {
-        height: 245px;
+        height: 221px;
 
         .card-main .btns {
             flex-wrap: nowrap;
@@ -163,6 +163,25 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .search_main {
+        width: 94%;
+        padding: 17px 15px;
+        border-radius: 20px;
+
+        .search_container {
+            gap: 15px;
+
+            .search_item,
+            .search_btn {
+                width: 100%;
+            }
+
+            .search_btn {
+                margin-top: 10px;
             }
         }
     }

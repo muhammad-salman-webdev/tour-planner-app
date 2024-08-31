@@ -82,3 +82,49 @@ productCards.forEach((card, index) => {
     manageSmallPopup(dPopupBtn, dPopup)
   );
 });
+
+// Filter Cards Toggle Options
+const filters = document.querySelectorAll(
+  ".filters_section .filter_cards > .filter-card"
+);
+filters.forEach((filter) => {
+  const filterBtn = filter.querySelector(".filter-btn");
+
+  if (filter.classList.contains("filter-card-popup")) {
+    const filterPopup = filter.querySelector(".filter-popup");
+    const filterCBtn = filterPopup.querySelector(
+      ".filter-headings .close-icon"
+    );
+    const filterOverlay = filter.querySelector(".filter-overlay");
+
+    filterBtn.addEventListener("click", () =>
+      managePopup(filterBtn, filterPopup, filterOverlay)
+    );
+
+    filterCBtn.addEventListener("click", () =>
+      managePopup(filterBtn, filterPopup, filterOverlay)
+    );
+
+    filterOverlay.addEventListener("click", () =>
+      managePopup(filterBtn, filterPopup, filterOverlay)
+    );
+
+    const subTabBtns = filterPopup.querySelectorAll(
+      ".filter-content > .add-head .add-filter-type"
+    );
+    const subTabs = filterPopup.querySelectorAll(
+      ".filter-content > .filters-details > .filter-details-container"
+    );
+
+    subTabBtns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        subTabBtns.forEach((b) => b.classList.toggle("active"));
+        subTabs.forEach((t) => t.classList.toggle("active"));
+      });
+    });
+  } else {
+    filterBtn.addEventListener("click", () => {
+      filterBtn.classList.toggle("active");
+    });
+  }
+});
