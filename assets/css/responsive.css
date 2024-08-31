@@ -119,6 +119,34 @@
     }
 }
 
+@media (max-width: 660px) {
+    .filters_section {
+        & .filters_container {
+            & .filter_cards {
+                & .filter-card {
+                    &.filter-card-popup {
+                        & .filter-popup {
+                            & .filter-content {
+                                & .add-head {
+                                    & .time-period-for-travelers {
+                                        & ul {
+                                            li {
+                                                flex-direction: column;
+                                                align-items: start;
+                                                gap: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 650px) {
     .custom-calendar {
         & .calendar-months-container {
