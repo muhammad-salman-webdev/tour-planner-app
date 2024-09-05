@@ -720,17 +720,14 @@ section {
 
     .property_container {
         width: 100%;
+        position: relative;
     }
 
     /* display: none; */
     .card-container {
         .b-card {
-            height: 225px;
-            position: relative;
-
             .card-main {
                 padding: 18px;
-                position: absolute;
                 border: 1px solid #29289B2B;
                 background: #FFFFFF;
                 border-radius: 20px;
@@ -774,7 +771,7 @@ section {
 
                         &>.cost-details {
                             display: flex;
-                            align-items: end;
+                            /* align-items: ; */
                             margin: 8px 0 0 0;
                             gap: 7px;
 
@@ -783,6 +780,8 @@ section {
                                 font-size: 16px;
                                 color: var(--orange);
                                 cursor: pointer;
+                                display: flex;
+                                align-self: self-end;
                             }
 
                             h2 {
@@ -798,54 +797,41 @@ section {
                                 box-shadow: 0px 20px 150px 0px #00000066;
                                 background: #FFFFFF;
                                 border-radius: 20px;
-                                right: 160px;
                                 min-width: 250px;
-                                top: 150px;
                                 opacity: 0;
                                 transition: all .3s ease;
-                                left: 14px;
+                                left: 15px;
+                                right: 15px;
                                 display: none;
                                 z-index: 4;
+                                padding: 20px 25px 16px;
+                                transform: translate(0px, 100px);
 
                                 &.show {
                                     display: block;
                                 }
 
                                 &.animate {
-                                    top: 90px;
                                     opacity: 1;
+                                    transform: translate(0px, 40px);
+                                }
+
+                                h4 {
+                                    font-family: 'Myriad Pro';
+                                    font-size: 26px;
+                                    font-weight: 600;
+                                    line-height: 31.2px;
+                                    color: #08003C;
+                                    margin-bottom: 18px;
                                 }
 
                                 .popup-header {
-                                    padding: 16px 20px 6px;
-
-                                    h4 {
-                                        margin: 0;
-                                        font-family: 'Myriad Pro';
-                                        font-size: 21px;
-                                        font-weight: 700;
-                                        line-height: 25.2px;
-                                        text-align: left;
-                                        color: #29289B;
-                                    }
-
-                                    &>p {
-                                        font-family: 'Myriad Pro';
-                                        font-size: 18px;
-                                        font-weight: 400;
-                                        line-height: 21.6px;
-                                        text-align: left;
-                                        color: #4B4B4B;
-                                        margin: 0;
-                                        margin-top: 6px;
-                                    }
-
                                     &>.close_icon {
                                         position: absolute;
                                         right: 14px;
                                         color: #7E7EB5;
                                         top: 14px;
-                                        font-size: 22px;
+                                        font-size: 26px;
                                         transition: all .3s ease;
 
                                         &:hover {
@@ -854,54 +840,93 @@ section {
                                     }
                                 }
 
-                                .popup-details {
-                                    padding-left: 20px;
-                                    padding-right: 10px;
+                                .popup-data-body {
+                                    .popup-data-brief {
+                                        .data-card {
+                                            .data-card-m {
+                                                border: 1px solid #DADADA;
+                                                border-radius: 20px;
+                                                padding: 18px 20px;
 
-                                    ul {
-                                        max-height: 190px;
-                                        overflow: auto;
-                                        margin: 0 0 10px 0;
-                                        padding: 0;
-                                        padding: 10px 14px 4px 0;
+                                                h3 {
+                                                    font-family: 'Myriad Pro';
+                                                    font-size: 20px;
+                                                    font-weight: 600;
+                                                    line-height: 24px;
+                                                    color: #29289B;
+                                                }
 
-                                        &::-webkit-scrollbar {
-                                            width: 8px;
-                                            background: #d1d1d1;
-                                            border-radius: 8px;
+                                                ul {
+                                                    padding: 0 0 0 25px;
+                                                    margin: 8px 0 0 0;
+
+                                                    li {
+                                                        font-family: 'Myriad Pro';
+                                                        font-size: 16px;
+                                                        font-weight: 400;
+                                                        line-height: 24px;
+                                                        color: #434343;
+
+                                                        strong {
+                                                            font-weight: 600;
+                                                        }
+
+                                                        &::marker {
+                                                            font-size: 10px;
+                                                        }
+                                                    }
+                                                }
+                                            }
                                         }
+                                    }
 
-                                        &::-webkit-scrollbar-thumb {
-                                            border-radius: 8px;
-                                            background: #29289B;
-                                            width: 8px;
-                                        }
+                                    .popup-pricing-details {
+                                        margin-top: 26px;
 
-                                        li {
-                                            width: 100%;
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: space-between;
-                                            padding: 10px 0;
-                                            border-top: 1px solid #CACACA;
+                                        ul {
+                                            margin: 0 0 0 0;
+                                            padding: 0;
+                                            position: relative;
 
-                                            p {
-                                                margin: 0;
-                                                font-family: 'Myriad Pro';
-                                                font-size: 16px;
-                                                font-weight: 400;
-                                                line-height: 19.2px;
-                                                text-align: left;
-                                                color: #4B4B4B;
+                                            &::before {
+                                                content: '';
+                                                width: 100%;
+                                                position: absolute;
+                                                bottom: 0;
+                                                background: #ffffff;
+                                                height: 2px;
                                             }
 
-                                            span {
-                                                font-family: 'Myriad Pro';
-                                                font-size: 16px;
-                                                font-weight: 400;
-                                                line-height: 19.2px;
-                                                text-align: right;
-                                                color: #4B4B4B;
+                                            li {
+                                                list-style: none;
+                                                margin: 0;
+
+                                                div {
+                                                    width: 100%;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: space-between;
+                                                    padding: 14px 0;
+                                                    border-bottom: 1px solid #CACACA;
+
+                                                    p {
+                                                        margin: 0;
+                                                        font-family: 'Myriad Pro';
+                                                        font-size: 16px;
+                                                        font-weight: 400;
+                                                        line-height: 19.2px;
+                                                        color: #4B4B4B;
+                                                    }
+
+                                                    span {
+                                                        font-family: 'Myriad Pro';
+                                                        font-size: 16px;
+                                                        font-weight: 600;
+                                                        line-height: 19.2px;
+                                                        text-align: right;
+                                                        color: #08003C;
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -918,9 +943,10 @@ section {
                     gap: 6px;
                     margin: 12px 0;
                     cursor: pointer;
+                    max-width: max-content;
 
                     i {
-                        font-size: 20px;
+                        font-size: 16px;
                         color: #29289B;
                     }
 
@@ -938,16 +964,16 @@ section {
                     overflow: hidden;
                     transition: all .4s ease;
                     position: absolute;
-                    top: 175px;
-                    left: 14px;
-                    right: 14px;
+                    left: 15px;
+                    right: 15px;
                     background: white;
                     border: 1px solid #DADADA;
                     box-shadow: 0px 4px 44px 0px #00000033;
                     border-radius: 20px;
-                    padding: 14px 20px;
+                    padding: 14px 20px 18px;
                     opacity: 0;
                     z-index: 3;
+                    transform: translate(0, 50px);
 
                     &.show {
                         display: grid;
@@ -955,14 +981,14 @@ section {
 
                     &.animate {
                         opacity: 1;
-                        top: 135px;
+                        transform: translate(0, -8px);
                     }
 
                     .close-icon {
                         position: absolute;
                         top: 10px;
                         right: 14px;
-                        font-size: 18px;
+                        font-size: 26px;
                         color: #7E7EB5;
                         transition: all .3s ease;
                         cursor: pointer;
@@ -972,25 +998,51 @@ section {
                         }
                     }
 
-                    &>div {
-                        min-height: 0;
+                    .c-details-container {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 25px;
 
-                        h3 {
-                            font-size: 20px;
-                            font-weight: 600;
-                            line-height: 24px;
-                            color: #1285EF;
-                        }
+                        .c-details {
+                            min-height: 0;
 
-                        ul {
-                            padding-left: 24px;
-                            margin: 0;
+                            h3 {
+                                font-family: 'Myriad Pro';
+                                font-size: 26px;
+                                font-weight: 600;
+                                line-height: 31.2px;
+                                color: #08003C;
+                                margin: 0;
+                            }
 
-                            li {
-                                color: #434343;
+                            p {
+                                font-family: 'Myriad Pro';
                                 font-size: 16px;
                                 font-weight: 400;
-                                line-height: 24px;
+                                line-height: 23px;
+                                color: #434343;
+                                margin: 10px 0 0 0;
+
+                                strong {
+                                    font-weight: 600;
+                                }
+                            }
+
+                            ul {
+                                padding-left: 24px;
+                                margin: 0;
+                                margin-top: 10px;
+
+                                li {
+                                    color: #434343;
+                                    font-size: 16px;
+                                    font-weight: 400;
+                                    line-height: 26px;
+
+                                    &::marker {
+                                        font-size: 12px;
+                                    }
+                                }
                             }
                         }
                     }
