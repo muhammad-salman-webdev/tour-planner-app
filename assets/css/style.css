@@ -20,152 +20,118 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-
-    .calendar-actions {
-        position: absolute;
-        /* display: none; */
-        top: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            aspect-ratio: 1/1;
-            border-radius: 8px;
-            border: 1px solid #DCE0E5;
-            outline: none;
-            background: white;
-            color: #14181F;
-        }
-    }
-
-    .calendar-months-container {
-        overflow: hidden;
-
-        .calendar-months {
-            display: flex;
-            gap: 26px;
-
-            .calendar-month {
-                display: flex;
-                flex-direction: column;
-                min-width: 250px;
-                width: 250px;
-                user-select: none;
-
-                .month-name {
-                    text-align: center;
-                    font-family: 'Inter';
-                    font-size: 15px;
-                    font-weight: 500;
-                    color: #14181F;
-                    height: 32px;
-                    align-items: center;
-                    display: flex;
-                    justify-content: center;
-                    margin-bottom: 10px;
-                }
-
-                .day-names,
-                .month-days {
-                    display: grid;
-                    grid-template-columns: repeat(7, 1fr);
-                }
-
-                .day-names {
-                    margin: 10px 0;
-
-                    span {
-                        font-family: 'Inter';
-                        font-size: 15px;
-                        font-weight: 400;
-                        line-height: 21px;
-                        text-align: center;
-                        color: #6F7C8E;
-                    }
-                }
-
-                .month-days {
-                    row-gap: 2px;
-
-                    button {
-                        border: none;
-                        outline: none;
-                        font-family: 'Inter';
-                        font-size: 15px;
-                        font-weight: 500;
-                        line-height: 21px;
-                        text-align: center;
-                        aspect-ratio: 1/1;
-                        background: white;
-                        /* &:nth-child(12) {
-                            background: #1285EF;
-                            color: white;
-                            border-radius: 8px 0px 0px 8px;
-                        }
-
-                        &:nth-child(13),
-                        &:nth-child(14),
-                        &:nth-child(15),
-                        &:nth-child(16),
-                        &:nth-child(17) {
-                            background: #1285EF24;
-                        }
-
-                        &:nth-child(18) {
-                            background: #1285EF;
-                            color: white;
-                            border-radius: 0px 8px 8px 0px;
-                        }
-
-                        &.prev-month,
-                        &.next-month {
-                            color: #6F7C8E;
-                        } */
-                    }
-                }
-
-                &:nth-child(1) {
-                    .month-days {
-                        button {
-                            &:nth-child(12) {
-                                background: #1285EF;
-                                color: white;
-                                border-radius: 8px 0px 0px 8px;
-                            }
-
-                            &:nth-child(13),
-                            &:nth-child(14),
-                            &:nth-child(15),
-                            &:nth-child(16),
-                            &:nth-child(17) {
-                                background: #1285EF24;
-                            }
-
-                            &:nth-child(18) {
-                                background: #1285EF;
-                                color: white;
-                                border-radius: 0px 8px 8px 0px;
-                            }
-
-                            &.prev-month,
-                            &.next-month {
-                                color: #6F7C8E;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
 
+.calendar-actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    border: 1px solid #DCE0E5;
+    background: white;
+    color: #14181F;
+    outline: none;
+}
+
+.calendar-months-container {
+    overflow: hidden;
+}
+
+.calendar-months {
+    display: flex;
+    gap: 26px;
+}
+
+.calendar-month {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    user-select: none;
+}
+
+.month-name {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 500;
+    color: #14181F;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.day-names,
+.month-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-names {
+    margin: 10px 0;
+}
+
+.day-names span {
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 400;
+    color: #6F7C8E;
+    text-align: center;
+}
+
+.month-days {
+    row-gap: 2px;
+}
+
+.month-days button {
+    border: none;
+    outline: none;
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 500;
+    aspect-ratio: 1/1;
+    background: white;
+}
+
+.calendar-month:nth-child(1) .month-days button:nth-child(12) {
+    background: #1285EF;
+    color: white;
+    border-radius: 8px 0 0 8px;
+}
+
+.calendar-month:nth-child(1) .month-days button:nth-child(13),
+.calendar-month:nth-child(1) .month-days button:nth-child(14),
+.calendar-month:nth-child(1) .month-days button:nth-child(15),
+.calendar-month:nth-child(1) .month-days button:nth-child(16),
+.calendar-month:nth-child(1) .month-days button:nth-child(17) {
+    background: #1285EF24;
+}
+
+.calendar-month:nth-child(1) .month-days button:nth-child(18) {
+    background: #1285EF;
+    color: white;
+    border-radius: 0 8px 8px 0;
+}
+
+.calendar-month:nth-child(1) .month-days button.prev-month,
+.calendar-month:nth-child(1) .month-days button.next-month {
+    color: #6F7C8E;
+}
+
+/* Salman */
 section {
     margin: 50px auto 0;
 }
@@ -179,1423 +145,1292 @@ section {
     background: white;
     border-radius: 40px;
     padding: 30px 40px 42px;
-
-    .search_container {
-        width: 100%;
-        display: flex;
-        gap: 16px;
-
-        .search_btn {
-            min-width: 170px;
-            display: flex;
-            align-items: end;
-
-            button {
-                width: 100%;
-                height: 62px;
-                border: none;
-                outline: none;
-                cursor: pointer;
-                font-size: 20px;
-                font-weight: 700;
-                line-height: 33px;
-                color: white;
-                box-shadow: 0px 4px 25px 0px #0000001A;
-                background: var(--orange);
-                border-radius: 12px;
-            }
-        }
-
-        .search_item {
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .selector {
-                width: 100%;
-
-                .label {
-                    font-size: 20px;
-                    font-weight: 800;
-                    line-height: 33px;
-                    color: #08003C;
-                    user-select: none;
-                }
-
-                .selector_box {
-                    display: flex;
-                    border-radius: 12px;
-                    height: 62px;
-                    display: flex;
-                    align-items: center;
-                    margin-top: 6px;
-                    border: 1px solid #29289B;
-                    padding: 0 20px 0 14px;
-                    gap: 10px;
-                    cursor: pointer;
-                    user-select: none;
-                    box-shadow: 0px 4px 25px 0px #0000001A;
-
-                    .box_icon {
-                        color: #007AFF;
-                        font-size: 20px;
-                    }
-
-                    .text {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        max-width: 300px;
-                        display: inline-block;
-                        font-size: 18px;
-                        font-weight: 400;
-                        line-height: 33px;
-                        color: #4B4B4B;
-                        margin: 0;
-                    }
-
-                    .down_icon {
-                        margin-left: auto;
-                        color: #4B4B4B;
-                        transform: rotate(0deg);
-                        transition: all .3s ease;
-                    }
-
-                    &.active {
-                        .down_icon {
-                            transform: rotate(180deg);
-                        }
-                    }
-                }
-            }
-
-            .select_popup-main {
-                .popup_overlay {
-                    position: fixed;
-                    inset: 0;
-                    background: #00000057;
-                    z-index: 4;
-                    backdrop-filter: blur(0px);
-                    transition: all .2s ease;
-                    display: none;
-                    opacity: 0;
-
-                    &.show {
-                        display: block;
-                    }
-
-                    &.animate {
-                        opacity: 1;
-                        backdrop-filter: blur(2px);
-                    }
-                }
-
-                .select_popup-container {
-                    z-index: 5;
-                    background: orange;
-                    width: 500px;
-                    max-width: 96vw;
-                    width: 150%;
-                    position: absolute;
-                    left: 50%;
-                    top: 350px;
-                    border-radius: 20px;
-                    background: white;
-                    padding: 20px 22px;
-                    transform: translate(-50%, 0%);
-                    box-shadow: 0px 20px 50px 0px #00000066;
-                    transition: all .2s ease;
-                    display: none;
-                    opacity: 0;
-
-                    &.show {
-                        display: block;
-                    }
-
-                    &.animate {
-                        top: 110px;
-                        opacity: 1;
-                    }
-
-                    .select_popup-body {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-
-                        .popup-header {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-
-                            .title {
-                                font-family: "Myriad Pro";
-                                font-size: 24px;
-                                font-weight: 700;
-                                line-height: 28.8px;
-                                color: var(--purple);
-                                margin: 0;
-                            }
-
-                            .close-btn {
-                                display: flex;
-                                border: none;
-                                outline: none;
-                                background: none;
-                                border-radius: 50%;
-
-                                i {
-                                    color: #7E7EB5;
-                                    transition: all .3s ease;
-                                    font-size: 26px;
-
-                                    &:hover {
-                                        color: #6767ae;
-                                    }
-                                }
-                            }
-                        }
-
-                        .popup-footer {
-                            display: flex;
-
-                            .popup-btns {
-                                display: flex;
-                                gap: 15px;
-
-                                &>button {
-                                    height: 54px;
-                                    border-radius: 12px;
-                                    box-shadow: none;
-                                    background: none;
-                                    border: none;
-                                    outline: none;
-                                    font-family: "Myriad Pro";
-                                    font-size: 20px;
-                                    font-weight: 700;
-                                    line-height: 33px;
-                                }
-
-                                .btn-light {
-                                    color: #3C3B40;
-                                    padding: 0 5px;
-                                }
-
-                                .btn-dark {
-                                    color: white;
-                                    background: #E17600;
-                                    padding: 0 45px;
-                                    box-shadow: 0px 4px 25px 0px #0000001A;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            &.country_select {
-                .select_popup-container {
-                    width: 500px;
-
-                    .search_countries {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-
-                        .search_input {
-                            display: flex;
-                            position: relative;
-                            align-items: center;
-
-                            input {
-                                width: 100%;
-                                height: 46px;
-                                outline: none;
-                                border-radius: 10px;
-                                border: 1px solid #CDCCDD;
-                                box-shadow: 0px 4px 25px 0px #0000001A;
-                                padding: 0 50px 0 16px;
-                                font-family: 'Myriad Pro';
-                                font-size: 16px;
-                                font-weight: 400;
-                                line-height: 33px;
-                                transition: all .3s ease;
-                                color: #4B4B4B;
-                                caret-color: var(--orange);
-
-                                &::placeholder {
-                                    color: #4B4B4B;
-                                }
-
-                                &::selection {
-                                    color: white;
-                                    background: var(--orange);
-                                }
-                            }
-
-                            .search-btn {
-                                position: absolute;
-                                right: 16px;
-                                padding: 0;
-                                border: none;
-                                background: none;
-                                display: flex;
-                            }
-                        }
-
-                        /* background: pink; */
-                        .countries-container {
-
-                            /* max-height: 390px; */
-                            /* overflow: auto; */
-                            /* padding-right: 5px; */
-                            &::-webkit-scrollbar {
-                                width: 6px;
-                                border-radius: 5px;
-                                background: #e0e0e0;
-                            }
-
-                            &::-webkit-scrollbar-thumb {
-                                background: #898989;
-                                border-radius: 5px;
-                            }
-
-                            .countries {
-                                /* display: none; */
-                                display: grid;
-                                grid-template-columns: repeat(3, minmax(100px, auto));
-                                gap: 16px;
-
-                                .country-card {
-                                    border: 1px solid;
-                                    display: flex;
-                                    flex-direction: column;
-                                    gap: 6px;
-                                    align-items: center;
-                                    border: 1px solid #CDCCDD;
-                                    justify-content: center;
-                                    border-radius: 10px;
-                                    padding: 20px 0;
-                                    gap: 8px;
-                                    user-select: none;
-                                    cursor: pointer;
-                                    position: relative;
-
-                                    &::before {
-                                        content: '';
-                                        position: absolute;
-                                        inset: 0;
-                                        border-radius: 10px;
-                                        z-index: -1;
-                                        border: 2px solid #1285EF;
-                                        opacity: 0;
-                                        transition: all .2s ease;
-                                    }
-
-                                    &::after {
-                                        content: "\f058";
-                                        font-family: "Font Awesome 6 Pro";
-                                        font-weight: 900;
-                                        position: absolute;
-                                        right: 5px;
-                                        color: #1285EF;
-                                        top: 5px;
-                                        display: flex;
-                                        font-size: 23px;
-                                        line-height: normal;
-                                        opacity: 0;
-                                        transition: all .2s ease;
-                                    }
-
-                                    &.active {
-                                        border-color: transparent;
-
-                                        &::before,
-                                        &::after {
-                                            opacity: 1;
-                                        }
-                                    }
-
-                                    img {
-                                        width: 48px;
-                                        aspect-ratio: 1/1;
-                                    }
-
-                                    span {
-                                        font-family: 'Myriad Pro';
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        line-height: 19.2px;
-                                        text-align: center;
-                                        color: #4B4B4B;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    .popup-footer {
-                        justify-content: center;
-                        padding-top: 10px;
-                    }
-                }
-            }
-
-            &.time_select {
-                .select_popup-container {
-                    width: 590px;
-                    padding: 20px 32px;
-
-                    .calendar-selection {
-                        border-top: 1px solid #DCE0E5;
-                        border-bottom: 1px solid #DCE0E5;
-                        padding: 20px 0 10px;
-                    }
-
-                    .popup-footer {
-                        justify-content: space-between;
-                        align-items: center;
-
-                        .selected-days {
-                            font-family: 'Myriad Pro';
-                            font-size: 22px;
-                            font-weight: 600;
-                            line-height: 33px;
-                            color: #08003B;
-                        }
-                    }
-                }
-            }
-
-            &.persons_select {
-                .select_popup-container {
-                    width: 485px;
-
-                    .visiters-container {
-                        .added-visiters {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 10px;
-
-                            .visiter {
-                                display: flex;
-                                align-items: center;
-                                gap: 10px;
-
-                                .del-btn {
-                                    min-width: 40px;
-                                    width: 40px;
-                                    aspect-ratio: 1/1;
-                                    border-radius: 10px;
-                                    font-size: 18px;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    outline: none;
-                                    box-shadow: 0px 4px 25px 0px #0000001A;
-                                    border: 1px solid #CDCCDD;
-                                    color: #000000;
-                                    background: white;
-                                }
-
-                                .visiter-count {
-                                    font-family: 'Myriad Pro';
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    line-height: 19.2px;
-                                    text-align: left;
-                                    color: #4B4B4B;
-                                    margin: 0;
-                                    min-width: max-content;
-                                }
-
-                                .visiter-age {
-                                    width: 100%;
-                                    margin: 0;
-                                    display: flex;
-                                    align-items: center;
-                                    background: #FFFFFF;
-                                    outline: none;
-                                    border: 1px solid #CDCCDD;
-                                    box-shadow: 0px 4px 25px 0px #0000001A;
-                                    height: 40px;
-                                    border-radius: 10px;
-                                    padding: 0 10px;
-
-                                    &::-webkit-inner-spin-button,
-                                    &::-webkit-outer-spin-button {
-                                        display: none;
-                                    }
-                                }
-
-                                .visiter-gender {
-                                    display: flex;
-                                    gap: 4px;
-
-                                    div {
-                                        font-family: 'Myriad Pro';
-                                        font-size: 15px;
-                                        font-weight: 400;
-                                        line-height: 18px;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        height: 40px;
-                                        border-radius: 10px;
-                                        border: 1px solid #CDCCDD;
-                                        color: #4B4B4B;
-                                        padding: 0 16px;
-                                        box-shadow: 0px 4px 25px 0px #0000001A;
-                                        transition: all .2s ease;
-
-                                        &.blue {
-                                            background: #1285EF;
-                                            color: white;
-                                        }
-                                    }
-
-                                    &.add {
-                                        input {
-                                            display: none;
-                                        }
-
-                                        label {
-                                            cursor: pointer;
-                                        }
-
-                                        label:has(input:checked) div {
-                                            color: #ffffff;
-                                            background: #ea7423;
-                                        }
-                                    }
-                                }
-
-                                &.visiter-add {
-                                    &::before {
-                                        content: '';
-                                        position: absolute;
-                                        inset: 3px;
-                                        border-radius: 10px;
-                                        outline: 5px dashed var(--orange);
-                                        outline-color: #e17400cb;
-                                        z-index: -1;
-                                    }
-
-                                    &::after {
-                                        content: '';
-                                        background: #fff9f3;
-                                        position: absolute;
-                                        border-radius: 14px;
-                                        right: -.5px;
-                                        left: -.5px;
-                                        top: -.5px;
-                                        bottom: -.5px;
-                                        z-index: -1;
-                                    }
-
-                                    position: relative;
-                                    border-radius: 10px;
-                                    padding: 10px;
-                                    margin-left: -12px;
-                                    width: calc(100% + 24px);
-                                }
-                            }
-                        }
-                    }
-
-                    .popup-btns {
-                        margin: 0 auto;
-                    }
-                }
-            }
-        }
-    }
 }
 
+.search_container {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+.search_btn {
+    min-width: 170px;
+    display: flex;
+    align-items: end;
+}
+
+.search_btn button {
+    width: 100%;
+    height: 62px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 33px;
+    color: white;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+    background: var(--orange);
+    border-radius: 12px;
+}
+
+.search_item {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selector {
+    width: 100%;
+}
+
+.label {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 33px;
+    color: #08003C;
+    user-select: none;
+}
+
+.selector_box {
+    display: flex;
+    border-radius: 12px;
+    height: 62px;
+    align-items: center;
+    margin-top: 6px;
+    border: 1px solid #29289B;
+    padding: 0 20px 0 14px;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+}
+
+.box_icon {
+    color: #007AFF;
+    font-size: 20px;
+}
+
+.text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 33px;
+    color: #4B4B4B;
+    margin: 0;
+}
+
+.down_icon {
+    margin-left: auto;
+    color: #4B4B4B;
+    transform: rotate(0deg);
+    transition: all .3s ease;
+}
+
+.selector_box.active .down_icon {
+    transform: rotate(180deg);
+}
+
+.select_popup-main .popup_overlay {
+    position: fixed;
+    inset: 0;
+    background: #00000057;
+    z-index: 4;
+    backdrop-filter: blur(0px);
+    transition: all .2s ease;
+    display: none;
+    opacity: 0;
+}
+
+.select_popup-main .popup_overlay.show {
+    display: block;
+}
+
+.select_popup-main .popup_overlay.animate {
+    opacity: 1;
+    backdrop-filter: blur(2px);
+}
+
+.select_popup-main .select_popup-container {
+    z-index: 5;
+    background: white;
+    width: 500px;
+    max-width: 96vw;
+    position: absolute;
+    left: 50%;
+    top: 350px;
+    border-radius: 20px;
+    padding: 20px 22px;
+    transform: translate(-50%, 0%);
+    box-shadow: 0px 20px 50px 0px #00000066;
+    transition: all .2s ease;
+    display: none;
+    opacity: 0;
+}
+
+.select_popup-main .select_popup-container.show {
+    display: block;
+}
+
+.select_popup-main .select_popup-container.animate {
+    top: 110px;
+    opacity: 1;
+}
+
+.select_popup-main .select_popup-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-family: "Myriad Pro";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+    color: var(--purple);
+    margin: 0;
+}
+
+.close-btn {
+    display: flex;
+    border: none;
+    outline: none;
+    background: none;
+    border-radius: 50%;
+}
+
+.close-btn i {
+    color: #7E7EB5;
+    transition: all .3s ease;
+    font-size: 26px;
+}
+
+.close-btn i:hover {
+    color: #6767ae;
+}
+
+.popup-footer {
+    display: flex;
+}
+
+.popup-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.popup-btns>button {
+    height: 54px;
+    border-radius: 12px;
+    box-shadow: none;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: "Myriad Pro";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 33px;
+}
+
+.btn-light {
+    color: #3C3B40;
+    padding: 0 5px;
+}
+
+.btn-dark {
+    color: white;
+    background: #E17600;
+    padding: 0 45px;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+}
+
+.country_select .select_popup-container {
+    width: 500px;
+}
+
+.country_select .select_popup-container .search_countries {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.country_select .select_popup-container .search_input {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.country_select .select_popup-container .search_input input {
+    width: 100%;
+    height: 46px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #CDCCDD;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+    padding: 0 50px 0 16px;
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 33px;
+    transition: all .3s ease;
+    color: #4B4B4B;
+    caret-color: var(--orange);
+}
+
+.country_select .select_popup-container .search_input input::placeholder {
+    color: #4B4B4B;
+}
+
+.country_select .select_popup-container .search_input input::selection {
+    color: white;
+    background: var(--orange);
+}
+
+.country_select .select_popup-container .search_input .search-btn {
+    position: absolute;
+    right: 16px;
+    padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+}
+
+.countries-container::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 5px;
+    background: #e0e0e0;
+}
+
+.countries-container::-webkit-scrollbar-thumb {
+    background: #898989;
+    border-radius: 5px;
+}
+
+.countries {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, auto));
+    gap: 16px;
+}
+
+.country-card {
+    border: 1px solid #CDCCDD;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px 0;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.country-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    z-index: -1;
+    border: 2px solid #1285EF;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.country-card::after {
+    content: "\f058";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+    position: absolute;
+    right: 5px;
+    color: #1285EF;
+    top: 5px;
+    display: flex;
+    font-size: 23px;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.country-card.active {
+    border-color: transparent;
+}
+
+.country-card.active::before,
+.country-card.active::after {
+    opacity: 1;
+}
+
+.country-card img {
+    width: 48px;
+    aspect-ratio: 1/1;
+}
+
+.country-card span {
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: center;
+    color: #4B4B4B;
+}
+
+.popup-footer {
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.time_select .select_popup-container {
+    width: 590px;
+    padding: 20px 32px;
+}
+
+.time_select .select_popup-container .calendar-selection {
+    border-top: 1px solid #DCE0E5;
+    border-bottom: 1px solid #DCE0E5;
+    padding: 20px 0 10px;
+}
+
+.time_select .select_popup-container .popup-footer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time_select .select_popup-container .popup-footer .selected-days {
+    font-family: 'Myriad Pro';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+    color: #08003B;
+}
+
+.persons_select .select_popup-container {
+    width: 485px;
+}
+
+.persons_select .select_popup-container .visiters-container .added-visiters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter .del-btn {
+    min-width: 40px;
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+    border: 1px solid #CDCCDD;
+    color: #000000;
+    background: white;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter .visiter-count {
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-align: left;
+    color: #4B4B4B;
+    margin: 0;
+    min-width: max-content;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter .visiter-age {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    outline: none;
+    border: 1px solid #CDCCDD;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter .visiter-age::-webkit-inner-spin-button,
+.persons_select .select_popup-container .visiters-container .visiter .visiter-age::-webkit-outer-spin-button {
+    display: none;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter .visiter-gender {
+    display: flex;
+    gap: 4px;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter .visiter-gender div {
+    font-family: 'Myriad Pro';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #CDCCDD;
+    color: #4B4B4B;
+    padding: 0 16px;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+    transition: all .2s ease;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter .visiter-gender div.blue {
+    background: #1285EF;
+    color: white;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter.add {
+    position: relative;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: -12px;
+    width: calc(100% + 24px);
+}
+
+.persons_select .select_popup-container .visiters-container .visiter.add::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 10px;
+    outline: 5px dashed var(--orange);
+    outline-color: #e17400cb;
+    z-index: -1;
+}
+
+.persons_select .select_popup-container .visiters-container .visiter.add::after {
+    content: '';
+    background: #fff9f3;
+    position: absolute;
+    border-radius: 14px;
+    right: -.5px;
+    left: -.5px;
+    top: -.5px;
+    bottom: -.5px;
+    z-index: -1;
+}
+
+.popup-btns {
+    margin: 0 auto;
+}
+
+/* Salman */
 /* Cards Section     */
 .property_section {
     width: 96%;
     max-width: 1432px;
+}
 
-    .property_container {
+.property_container {
+    width: 100%;
+    position: relative;
+}
+
+/* display: none; */
+.card-container {}
+
+.b-card {
+    padding: 0;
+    border-radius: 24px;
+    margin: 0;
+    display: flex;
+
+    .card-main {
+        padding: 18px;
+        border: 1px solid #29289B2B;
+        background: #FFFFFF;
+        border-radius: 20px;
+        box-shadow: 0px 4px 65.6px 0px #00000026;
         width: 100%;
-        position: relative;
+        transition: box-shadow .3s ease;
+    }
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img {
+    width: 80px;
+    transition: all .3s ease;
+}
+
+.img img {
+    width: 100%;
+}
+
+.header-details {}
+
+.cost {
+    display: flex;
+    color: var(--orange);
+    gap: 10px;
+    align-items: center;
+    justify-content: right;
+}
+
+.cost i {
+    font-size: 18px;
+}
+
+.cost p {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.cost-details {
+    display: flex;
+    margin: 8px 0 0 0;
+    gap: 7px;
+}
+
+.cost-details i {
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: var(--orange);
+    cursor: pointer;
+    display: flex;
+    align-self: self-end;
+}
+
+.cost-details h2 {
+    margin: 0 0 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #29289B;
+    text-align: right;
+}
+
+.popup {
+    position: absolute;
+    box-shadow: 0px 20px 150px 0px #00000066;
+    background: #FFFFFF;
+    border-radius: 20px;
+    min-width: 250px;
+    opacity: 0;
+    transition: all .3s ease;
+    left: 15px;
+    right: 15px;
+    display: none;
+    z-index: 4;
+    padding: 20px 25px 16px;
+}
+
+.popup.show {
+    display: block;
+}
+
+.popup.animate {
+    opacity: 1;
+    transform: translate(0px, 40px);
+}
+
+.popup h4 {
+    font-family: 'Myriad Pro';
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 31.2px;
+    color: #08003C;
+    margin-bottom: 18px;
+}
+
+.popup-header .close_icon {
+    position: absolute;
+    right: 14px;
+    color: #7E7EB5;
+    top: 14px;
+    font-size: 26px;
+    transition: all .3s ease;
+}
+
+.popup-header .close_icon:hover {
+    color: #5252a7;
+}
+
+.popup-data-body {}
+
+.popup-data-brief {}
+
+.data-card {
+    .data-card-m {
+        border: 1px solid #DADADA;
+        border-radius: 20px;
+        padding: 18px 20px;
+    }
+}
+
+.data-card-m h3 {
+    font-family: 'Myriad Pro';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #29289B;
+}
+
+.data-card-m ul {
+    padding: 0 0 0 25px;
+    margin: 8px 0 0 0;
+}
+
+.data-card-m ul li {
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #434343;
+
+    strong {
+        font-weight: 600;
     }
 
-    /* display: none; */
-    .card-container {
-        .b-card {
-            .card-main {
-                padding: 18px;
-                border: 1px solid #29289B2B;
-                background: #FFFFFF;
-                border-radius: 20px;
-                box-shadow: 0px 4px 65.6px 0px #00000026;
-                width: 100%;
-                transition: box-shadow .3s ease;
-
-                /* header */
-                .card-head {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-
-                    .img {
-                        width: 80px;
-                        transition: all .3s ease;
-
-                        img {
-                            width: 100%;
-                        }
-                    }
-
-                    .header-details {
-                        .cost {
-                            display: flex;
-                            color: var(--orange);
-                            gap: 10px;
-                            align-items: center;
-                            justify-content: right;
-
-                            i {
-                                font-size: 18px;
-                            }
-
-                            p {
-                                font-size: 14px;
-                                font-weight: 400;
-                                margin: 0;
-                            }
-                        }
-
-                        &>.cost-details {
-                            display: flex;
-                            /* align-items: ; */
-                            margin: 8px 0 0 0;
-                            gap: 7px;
-
-                            i {
-                                margin-bottom: 6px;
-                                font-size: 16px;
-                                color: var(--orange);
-                                cursor: pointer;
-                                display: flex;
-                                align-self: self-end;
-                            }
-
-                            h2 {
-                                margin: 0 0 0;
-                                font-size: 30px;
-                                font-weight: 700;
-                                color: #29289B;
-                                text-align: right;
-                            }
-
-                            .popup {
-                                position: absolute;
-                                box-shadow: 0px 20px 150px 0px #00000066;
-                                background: #FFFFFF;
-                                border-radius: 20px;
-                                min-width: 250px;
-                                opacity: 0;
-                                transition: all .3s ease;
-                                left: 15px;
-                                right: 15px;
-                                display: none;
-                                z-index: 4;
-                                padding: 20px 25px 16px;
-                                transform: translate(0px, 100px);
-
-                                &.show {
-                                    display: block;
-                                }
-
-                                &.animate {
-                                    opacity: 1;
-                                    transform: translate(0px, 40px);
-                                }
-
-                                h4 {
-                                    font-family: 'Myriad Pro';
-                                    font-size: 26px;
-                                    font-weight: 600;
-                                    line-height: 31.2px;
-                                    color: #08003C;
-                                    margin-bottom: 18px;
-                                }
-
-                                .popup-header {
-                                    &>.close_icon {
-                                        position: absolute;
-                                        right: 14px;
-                                        color: #7E7EB5;
-                                        top: 14px;
-                                        font-size: 26px;
-                                        transition: all .3s ease;
-
-                                        &:hover {
-                                            color: #5252a7;
-                                        }
-                                    }
-                                }
-
-                                .popup-data-body {
-                                    .popup-data-brief {
-                                        .data-card {
-                                            .data-card-m {
-                                                border: 1px solid #DADADA;
-                                                border-radius: 20px;
-                                                padding: 18px 20px;
-
-                                                h3 {
-                                                    font-family: 'Myriad Pro';
-                                                    font-size: 20px;
-                                                    font-weight: 600;
-                                                    line-height: 24px;
-                                                    color: #29289B;
-                                                }
-
-                                                ul {
-                                                    padding: 0 0 0 25px;
-                                                    margin: 8px 0 0 0;
-
-                                                    li {
-                                                        font-family: 'Myriad Pro';
-                                                        font-size: 16px;
-                                                        font-weight: 400;
-                                                        line-height: 24px;
-                                                        color: #434343;
-
-                                                        strong {
-                                                            font-weight: 600;
-                                                        }
-
-                                                        &::marker {
-                                                            font-size: 10px;
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    .popup-pricing-details {
-                                        margin-top: 26px;
-
-                                        ul {
-                                            margin: 0 0 0 0;
-                                            padding: 0;
-                                            position: relative;
-
-                                            &::before {
-                                                content: '';
-                                                width: 100%;
-                                                position: absolute;
-                                                bottom: 0;
-                                                background: #ffffff;
-                                                height: 2px;
-                                            }
-
-                                            li {
-                                                list-style: none;
-                                                margin: 0;
-
-                                                div {
-                                                    width: 100%;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    justify-content: space-between;
-                                                    padding: 14px 0;
-                                                    border-bottom: 1px solid #CACACA;
-
-                                                    p {
-                                                        margin: 0;
-                                                        font-family: 'Myriad Pro';
-                                                        font-size: 16px;
-                                                        font-weight: 400;
-                                                        line-height: 19.2px;
-                                                        color: #4B4B4B;
-                                                    }
-
-                                                    span {
-                                                        font-family: 'Myriad Pro';
-                                                        font-size: 16px;
-                                                        font-weight: 600;
-                                                        line-height: 19.2px;
-                                                        text-align: right;
-                                                        color: #08003C;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                /* note */
-                .note {
-                    display: flex;
-                    align-items: center;
-                    gap: 6px;
-                    margin: 12px 0;
-                    cursor: pointer;
-                    max-width: max-content;
-
-                    i {
-                        font-size: 16px;
-                        color: #29289B;
-                    }
-
-                    h4 {
-                        font-size: 14px;
-                        font-weight: 600;
-                        margin: 0;
-                        color: #08003C;
-                    }
-                }
-
-                /* detiails */
-                .details {
-                    display: none;
-                    overflow: hidden;
-                    transition: all .4s ease;
-                    position: absolute;
-                    left: 15px;
-                    right: 15px;
-                    background: white;
-                    border: 1px solid #DADADA;
-                    box-shadow: 0px 4px 44px 0px #00000033;
-                    border-radius: 20px;
-                    padding: 14px 20px 18px;
-                    opacity: 0;
-                    z-index: 3;
-                    transform: translate(0, 50px);
-
-                    &.show {
-                        display: grid;
-                    }
-
-                    &.animate {
-                        opacity: 1;
-                        transform: translate(0, -8px);
-                    }
-
-                    .close-icon {
-                        position: absolute;
-                        top: 10px;
-                        right: 14px;
-                        font-size: 26px;
-                        color: #7E7EB5;
-                        transition: all .3s ease;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: #5151af;
-                        }
-                    }
-
-                    .c-details-container {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 25px;
-
-                        .c-details {
-                            min-height: 0;
-
-                            h3 {
-                                font-family: 'Myriad Pro';
-                                font-size: 26px;
-                                font-weight: 600;
-                                line-height: 31.2px;
-                                color: #08003C;
-                                margin: 0;
-                            }
-
-                            p {
-                                font-family: 'Myriad Pro';
-                                font-size: 16px;
-                                font-weight: 400;
-                                line-height: 23px;
-                                color: #434343;
-                                margin: 10px 0 0 0;
-
-                                strong {
-                                    font-weight: 600;
-                                }
-                            }
-
-                            ul {
-                                padding-left: 24px;
-                                margin: 0;
-                                margin-top: 10px;
-
-                                li {
-                                    color: #434343;
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    line-height: 26px;
-
-                                    &::marker {
-                                        font-size: 12px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                /* buttons */
-                .btns {
-                    display: flex;
-                    gap: 14px;
-
-                    .btn {
-                        min-width: max-content;
-                        border: none;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 8px;
-                        font-size: 16px;
-                        font-weight: 700;
-                        line-height: 19.2px;
-                        height: 60px;
-                        box-shadow: none;
-                        border-radius: 15px;
-                        cursor: pointer;
-
-                        &.btn-light {
-                            width: 100%;
-                            border: 2px solid #007AFF;
-                            background: white;
-                            color: #007AFF;
-                        }
-
-                        &.btn-dark {
-                            width: 100%;
-                            border: 2px solid #E17600;
-                            background: #F58409;
-                            color: white;
-                        }
-                    }
-                }
-
-                &:hover {
-                    box-shadow: 0px 0px 8px 2px #4545453f;
-                    z-index: 2;
-
-                    .card-head {
-                        .img {
-                            transform: scale(1.2);
-                        }
-                    }
-                }
-            }
-        }
+    &::marker {
+        font-size: 10px;
     }
+}
+
+.popup-pricing-details {
+    margin-top: 26px;
+}
+
+.popup-pricing-details ul {
+    margin: 0 0 0 0;
+    padding: 0;
+    position: relative;
+}
+
+.popup-pricing-details ul::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #ffffff;
+    height: 2px;
+}
+
+.popup-pricing-details ul li {
+    list-style: none;
+    margin: 0;
+}
+
+.popup-pricing-details ul li div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #CACACA;
+}
+
+.popup-pricing-details ul li div p {
+    margin: 0;
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    color: #4B4B4B;
+}
+
+.popup-pricing-details ul li div span {
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    text-align: right;
+    color: #08003C;
+}
+
+.note {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 12px 0;
+    cursor: pointer;
+    max-width: max-content;
+}
+
+.note i {
+    font-size: 16px;
+    color: #29289B;
+}
+
+.note h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: #08003C;
+}
+
+.details {
+    display: none;
+    overflow: hidden;
+    transition: all .4s ease;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    background: white;
+    border: 1px solid #DADADA;
+    box-shadow: 0px 4px 44px 0px #00000033;
+    border-radius: 20px;
+    padding: 14px 20px 18px;
+    opacity: 0;
+    z-index: 3;
+    transform: translate(0, 50px);
+}
+
+.details.show {
+    display: grid;
+}
+
+.details.animate {
+    opacity: 1;
+    transform: translate(0, -8px);
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 26px;
+    color: #7E7EB5;
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    color: #5151af;
+}
+
+.c-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.c-details {
+    min-height: 0;
+}
+
+.c-details h3 {
+    font-family: 'Myriad Pro';
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 31.2px;
+    color: #08003C;
+    margin: 0;
+}
+
+.c-details p {
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    color: #434343;
+    margin: 10px 0 0 0;
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+.c-details ul {
+    padding-left: 24px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.c-details ul li {
+    color: #434343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    &::marker {
+        font-size: 12px;
+    }
+}
+
+.btns {
+    display: flex;
+    gap: 14px;
+}
+
+.btns .btn {
+    min-width: max-content;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    height: 60px;
+    box-shadow: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btns .btn.btn-light {
+    width: 100%;
+    border: 2px solid #007AFF;
+    background: white;
+    color: #007AFF;
+}
+
+.btns .btn.btn-dark {
+    width: 100%;
+    border: 2px solid #E17600;
+    background: #F58409;
+    color: white;
+}
+
+.b-card:hover {
+    box-shadow: 0px 0px 8px 2px #4545453f;
+    z-index: 2;
+}
+
+.b-card:hover .card-head .img {
+    transform: scale(1.2);
 }
 
 /* Filter Section */
 .filters_section {
     width: 96%;
     max-width: 1432px;
+}
 
-    .filters_container {
-        .filter-heading {
-            font-family: 'Myriad Pro';
-            color: #08003C;
-            font-size: 46px;
-            font-weight: 700;
-            line-height: 55.2px;
-            text-align: center;
-            max-width: 910px;
-            margin: 0 auto;
+.filter-heading {
+    font-family: 'Myriad Pro';
+    color: #08003C;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 55.2px;
+    text-align: center;
+    max-width: 910px;
+    margin: 0 auto;
+}
 
-            &::selection {
-                color: #ffffff;
-                background: var(--orange);
-            }
-        }
+.filter-heading::selection {
+    color: #ffffff;
+    background: var(--orange);
+}
 
-        .filter_cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 13px;
-            max-width: 1234px;
-            margin: 50px auto;
+.filter_cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    max-width: 1234px;
+    margin: 50px auto;
+}
 
-            .filter-card {
-                .filter-btn {
-                    background: white;
-                    color: #08003C;
-                    border: 1px solid #08003B57;
-                    padding: 10px 20px;
-                    font-family: 'Myriad Pro';
-                    font-size: 16px;
-                    font-weight: 600;
-                    line-height: 19.2px;
-                    text-align: center;
-                    border-radius: 12px;
-                    transition: all .3s ease;
-                    user-select: none;
-                    outline: none;
+.filter-card {}
 
-                    &:hover {
-                        background: #efefef68;
-                        box-shadow: 0 0 5px #b3b3b36f;
-                        transform: translateY(-4px);
-                    }
+.filter-btn {
+    background: white;
+    color: #08003C;
+    border: 1px solid #08003B57;
+    padding: 10px 20px;
+    font-family: 'Myriad Pro';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    text-align: center;
+    border-radius: 12px;
+    transition: all .3s ease;
+    user-select: none;
+    outline: none;
+}
 
-                    &.active {
-                        border-color: var(--orange);
-                        background: var(--orange);
-                        color: white;
-                    }
-                }
+.filter-btn:hover {
+    background: #efefef68;
+    box-shadow: 0 0 5px #b3b3b36f;
+    transform: translateY(-4px);
+}
 
-                &.filter-card-popup {
-                    display: flex;
+.filter-btn.active {
+    border-color: var(--orange);
+    background: var(--orange);
+    color: white;
+}
 
-                    /* justify-content: center; */
-                    /* position: relative; */
-                    .filter-btn {
-                        /* background: red; */
-                    }
+.filter-card-popup {
+    display: flex;
+}
 
-                    .filter-overlay {
-                        position: fixed;
-                        inset: 0;
-                        background: #c7c7c754;
-                        display: none;
-                        transition: all .3s ease;
-                        z-index: 5;
+.filter-overlay {
+    position: fixed;
+    inset: 0;
+    background: #c7c7c754;
+    display: none;
+    transition: all .3s ease;
+    z-index: 5;
+}
 
-                        &.show {
-                            display: block;
-                        }
+.filter-overlay.show {
+    display: block;
+}
 
-                        &.animate {
-                            opacity: 1;
-                            backdrop-filter: blur(1px);
-                        }
-                    }
+.filter-overlay.animate {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
 
-                    .filter-popup {
-                        /* top: 50px; */
-                        transform: translate(-50%, 200px);
-                        left: 50%;
-                        border-radius: 20px;
-                        width: 575px;
-                        max-width: 96vw;
-                        background: white;
-                        position: absolute;
-                        box-shadow: 0px 20px 150px 0px #00000066;
-                        padding: 16px 20px;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
-                        display: none;
-                        opacity: 0;
-                        transition: all .3s ease;
-                        z-index: 5;
+.filter-popup {
+    transform: translate(-50%, 200px);
+    left: 50%;
+    border-radius: 20px;
+    width: 575px;
+    max-width: 96vw;
+    background: white;
+    position: absolute;
+    box-shadow: 0px 20px 150px 0px #00000066;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    opacity: 0;
+    transition: all .3s ease;
+    z-index: 5;
+}
 
-                        &:has(.time-period-for-travelers) {
-                            width: 675px;
-                        }
+.filter-popup:has(.time-period-for-travelers) {
+    width: 675px;
+}
 
-                        &.show {
-                            display: block;
-                        }
+.filter-popup.show {
+    display: block;
+}
 
-                        &.animate {
-                            opacity: 1;
-                            transform: translate(-50%, 50px);
-                        }
+.filter-popup.animate {
+    opacity: 1;
+    transform: translate(-50%, 50px);
+}
 
-                        .filter-headings {
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
+.filter-headings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-                            h3 {
-                                font-family: 'Myriad Pro';
-                                font-size: 24px;
-                                font-weight: 700;
-                                line-height: 28.8px;
-                                color: #29289B;
+.filter-headings h3 {
+    font-family: 'Myriad Pro';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+    color: #29289B;
+}
 
-                                span {
-                                    font-size: 19px;
-                                    font-weight: 400;
-                                    line-height: 22.8px;
-                                    color: #6D688C;
-                                }
-                            }
+.filter-headings h3 span {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 22.8px;
+    color: #6D688C;
+}
 
-                            .close-icon {
-                                font-size: 26px;
-                                color: #7E7EB5;
-                                transition: all .3s ease;
+.close-icon {
+    font-size: 26px;
+    color: #7E7EB5;
+    transition: all .3s ease;
+}
 
-                                &:hover {
-                                    color: #5050ae;
-                                    cursor: pointer;
-                                }
-                            }
-                        }
+.close-icon:hover {
+    color: #5050ae;
+    cursor: pointer;
+}
 
-                        .filter-body {
-                            .desc {
-                                p {
-                                    display: inline;
-                                    font-family: 'Myriad Pro';
-                                    font-size: 18px;
-                                    font-weight: 400;
-                                    line-height: 23px;
-                                    color: #4B4B4B;
-                                }
+.filter-body .desc {
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}
 
-                                button {
-                                    background: none;
-                                    border: none;
-                                    outline: none;
-                                    font-family: 'Myriad Pro';
-                                    text-decoration: underline;
-                                    color: var(--orange);
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    line-height: 23px;
-                                }
+.filter-body .desc p {
+    display: inline;
+    font-family: 'Myriad Pro';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    color: #4B4B4B;
+}
 
-                                /* display: flex; */
-                                border-bottom: 1px solid grey;
-                                padding-bottom: 10px;
-                            }
-                        }
+.filter-body .desc button {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'Myriad Pro';
+    text-decoration: underline;
+    color: var(--orange);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+}
 
-                        .filter-content {
-                            .add-head {
-                                &>h3 {
-                                    font-family: 'Myriad Pro';
-                                    color: #29289B;
-                                    font-size: 24px;
-                                    font-weight: 700;
-                                    line-height: 28.8px;
-                                    text-align: left;
-                                    margin: 10px 0;
-                                }
+.filter-content .add-head>h3 {
+    font-family: 'Myriad Pro';
+    color: #29289B;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+    text-align: left;
+    margin: 10px 0;
+}
 
-                                .add-filter-types {
-                                    display: grid;
-                                    grid-template-columns: 1fr auto 1fr;
+.add-filter-types {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
 
-                                    .add-filter-type {
-                                        /* width: auto; */
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 8px;
-                                        padding: 0 14px;
-                                        height: 43px;
-                                        border: 1px solid #CDCCDD;
-                                        box-shadow: 0px 4px 25px 0px #0000001A;
-                                        background: #FFFFFF;
-                                        border-radius: 10px;
-                                        cursor: pointer;
-                                        user-select: none;
-                                        transition: all .3s ease;
+.add-filter-type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 14px;
+    height: 43px;
+    border: 1px solid #CDCCDD;
+    box-shadow: 0px 4px 25px 0px #0000001A;
+    background: #FFFFFF;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease;
+}
 
-                                        &.text_center {
-                                            justify-content: center;
-                                        }
+.add-filter-type.text_center {
+    justify-content: center;
+}
 
-                                        i {
-                                            font-size: 16px;
-                                        }
+.add-filter-type i {
+    font-size: 16px;
+}
 
-                                        p {
-                                            margin: 0;
-                                            font-family: 'Myriad Pro';
-                                            font-size: 15px;
-                                            font-weight: 400;
-                                            line-height: 18px;
-                                            color: #4B4B4B;
-                                        }
+.add-filter-type p {
+    margin: 0;
+    font-family: 'Myriad Pro';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #4B4B4B;
+}
 
-                                        &.active {
-                                            background: #1284ED;
-                                            border-color: #1284ED;
-                                            color: white;
+.add-filter-type.active {
+    background: #1284ED;
+    border-color: #1284ED;
+    color: white;
+}
 
-                                            p,
-                                            i {
-                                                color: white;
-                                            }
-                                        }
-                                    }
+.add-filter-type.active p,
+.add-filter-type.active i {
+    color: white;
+}
 
-                                    &>span {
-                                        /* background: red; */
-                                        width: 43px;
-                                        aspect-ratio: 1/1;
-                                        display: grid;
-                                        place-items: center;
-                                        color: #4B4B4B;
-                                        font-size: 17px;
-                                    }
-                                }
+.add-head>span {
+    width: 43px;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: #4B4B4B;
+    font-size: 17px;
+}
 
-                                .time-period-for-travelers {
-                                    ul {
-                                        margin: 0 0 20px 0;
-                                        padding: 0;
-                                        display: flex;
-                                        flex-direction: column;
-                                        gap: 10px;
+.time-period-for-travelers ul {
+    margin: 0 0 20px 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-                                        li {
-                                            display: flex;
-                                            align-items: center;
-                                            gap: 20px;
-                                            position: relative;
-                                            justify-content: center;
+.time-period-for-travelers li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+}
 
-                                            .popup-for-calendar {
-                                                overflow: hidden;
-                                                transition: all .4s ease;
-                                                position: absolute;
-                                                top: calc(100% + 2px);
-                                                background: white;
-                                                border: 1px solid #DADADA;
-                                                box-shadow: 0px 4px 44px 0px #00000033;
-                                                border-radius: 20px;
-                                                padding: 14px 20px;
-                                                z-index: 3;
-                                                max-width: 570px;
-                                                width: 100%;
-                                                display: none;
-                                                opacity: 0;
-                                                transform: translateY(150px);
-                                                transition: all .3s ease;
+.popup-for-calendar {
+    overflow: hidden;
+    transition: all .4s ease;
+    position: absolute;
+    top: calc(100% + 2px);
+    background: white;
+    border: 1px solid #DADADA;
+    box-shadow: 0px 4px 44px 0px #00000033;
+    border-radius: 20px;
+    padding: 14px 20px;
+    z-index: 3;
+    max-width: 570px;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all .3s ease;
+}
 
-                                                &.show {
-                                                    display: block;
-                                                }
+.popup-for-calendar.show {
+    display: block;
+}
 
-                                                &.animate {
-                                                    opacity: 1;
-                                                    transform: translateY(0);
-                                                }
+.popup-for-calendar.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-                                                .header {
-                                                    margin-bottom: 20px;
+.popup-for-calendar .header {
+    margin-bottom: 20px;
+}
 
-                                                    h3 {
-                                                        margin: 0;
-                                                        font-family: 'Myriad Pro';
-                                                        font-size: 21px;
-                                                        font-weight: 700;
-                                                        line-height: 25.2px;
-                                                        text-align: left;
-                                                        color: #29289B;
-                                                    }
+.popup-for-calendar .header h3 {
+    margin: 0;
+    font-family: 'Myriad Pro';
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 25.2px;
+    text-align: left;
+    color: #29289B;
+}
 
-                                                    i {
-                                                        position: absolute;
-                                                        right: 14px;
-                                                        color: #7E7EB5;
-                                                        top: 14px;
-                                                        font-size: 22px;
-                                                        transition: all .3s ease;
+.popup-for-calendar .header i {
+    position: absolute;
+    right: 14px;
+    color: #7E7EB5;
+    top: 14px;
+    font-size: 22px;
+    transition: all .3s ease;
+}
 
-                                                        &:hover {
-                                                            color: #5252a7;
-                                                        }
-                                                    }
-                                                }
-                                            }
+.popup-for-calendar .header i:hover {
+    color: #5252a7;
+}
 
-                                            label {
-                                                display: flex;
-                                                align-items: center;
-                                                gap: 10px;
-                                                min-width: max-content;
+.label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: max-content;
+}
 
-                                                input {
-                                                    min-width: 26px;
-                                                    width: 26px;
-                                                    aspect-ratio: 1/1;
-                                                    position: relative;
-                                                    /* opacity: 0; */
-                                                    background: transparent;
-                                                    border: none;
-                                                    outline: none;
-                                                    position: relative;
-                                                    border-radius: 50px;
-                                                    transform: scale(0.8);
+.label input {
+    min-width: 26px;
+    width: 26px;
+    aspect-ratio: 1/1;
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    transform: scale(0.8);
+}
 
-                                                    &::before {
-                                                        transform: scale(1.2);
-                                                        opacity: 1;
-                                                        content: "\f00c";
-                                                        font-family: "Font Awesome 6 Pro";
-                                                        font-weight: 900;
-                                                        font-size: 14px;
-                                                        position: absolute;
-                                                        inset: 0;
-                                                        display: grid;
-                                                        place-items: center;
-                                                        box-shadow: 0px 4px 8px 0px #1C252C14;
-                                                        border: 1px solid #CDCCDD;
-                                                        border-radius: 5px;
-                                                        background: white;
-                                                        color: white;
-                                                        transition: all .2s ease;
-                                                    }
+.label input::before {
+    transform: scale(1.2);
+    opacity: 1;
+    content: "\f00c";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+    font-size: 14px;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    box-shadow: 0px 4px 8px 0px #1C252C14;
+    border: 1px solid #CDCCDD;
+    border-radius: 5px;
+    background: white;
+    color: white;
+    transition: all .2s ease;
+}
 
-                                                    &:checked {
-                                                        &::before {
-                                                            background: #1284ED;
-                                                            border-color: #1284ED;
-                                                        }
-                                                    }
-                                                }
+.label input:checked::before {
+    background: #1284ED;
+    border-color: #1284ED;
+}
 
-                                                p {
-                                                    margin: 0;
-                                                    user-select: none;
-                                                    font-family: 'Myriad Pro';
-                                                    font-size: 15px;
-                                                    font-weight: 400;
-                                                    line-height: 18px;
-                                                    color: #4B4B4B;
-                                                }
-                                            }
+.label p {
+    margin: 0;
+    user-select: none;
+    font-family: 'Myriad Pro';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #4B4B4B;
+}
 
-                                            .add-filter-types {
-                                                width: 100%;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+.filters-details {
+    margin: 14px 0;
+}
 
-                            .filters-details {
-                                margin: 14px 0;
+.filters-details .filter-details-container {
+    display: none;
+}
 
-                                .filter-details-container {
-                                    display: none;
+.filters-details .filter-details-container.active {
+    display: block;
+}
 
-                                    &.active {
-                                        display: block;
-                                    }
-                                }
+.whole_trip_filter_details ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    row-gap: 8px;
+}
 
-                                .whole_trip_filter_details {
-                                    ul {
-                                        display: flex;
-                                        flex-wrap: wrap;
-                                        justify-content: space-between;
-                                        margin: 0;
-                                        padding: 0;
-                                        row-gap: 8px;
+.whole_trip_filter_details li {
+    width: 49%;
+    list-style: none;
+}
 
-                                        li {
-                                            width: 49%;
-                                            list-style: none;
+.calendar_box {
+    border-bottom: 1px solid #DCE0E5;
+    padding-bottom: 10px;
+}
 
-                                            label {
-                                                display: flex;
-                                                align-items: center;
-                                                gap: 10px;
+.filter-footer {
+    display: flex;
+    justify-content: center;
+}
 
-                                                input {
-                                                    min-width: 26px;
-                                                    width: 26px;
-                                                    aspect-ratio: 1/1;
-                                                    position: relative;
-                                                    /* opacity: 0; */
-                                                    background: transparent;
-                                                    border: none;
-                                                    outline: none;
-                                                    position: relative;
-                                                    border-radius: 50px;
-                                                    transform: scale(0.8);
-
-                                                    &::before {
-                                                        transform: scale(1.2);
-                                                        opacity: 1;
-                                                        content: "\f00c";
-                                                        font-family: "Font Awesome 6 Pro";
-                                                        font-weight: 900;
-                                                        font-size: 14px;
-                                                        position: absolute;
-                                                        inset: 0;
-                                                        display: grid;
-                                                        place-items: center;
-                                                        box-shadow: 0px 4px 8px 0px #1C252C14;
-                                                        border: 1px solid #CDCCDD;
-                                                        border-radius: 5px;
-                                                        background: white;
-                                                        color: white;
-                                                        transition: all .2s ease;
-                                                    }
-
-                                                    &:checked {
-                                                        &::before {
-                                                            background: #1284ED;
-                                                            border-color: #1284ED;
-                                                        }
-                                                    }
-                                                }
-
-                                                p {
-                                                    margin: 0;
-                                                    user-select: none;
-                                                    font-family: 'Myriad Pro';
-                                                    font-size: 15px;
-                                                    font-weight: 400;
-                                                    line-height: 18px;
-                                                    color: #4B4B4B;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                .calendar_box {
-                                    border-bottom: 1px solid #DCE0E5;
-                                    padding-bottom: 10px;
-                                }
-                            }
-                        }
-
-                        .filter-footer {
-                            display: flex;
-                            justify-content: center;
-
-                            .filter-btns .add {
-                                box-shadow: 0px 4px 25px 0px #0000001A;
-                                background: var(--orange);
-                                border-radius: 12px;
-                                padding: 8px 40px;
-                                border: none;
-                                outline: none;
-                                color: white;
-                                font-family: 'Myriad Pro';
-                                font-size: 18px;
-                                font-weight: 700;
-                                line-height: 33px;
-                                text-align: left;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+.filter-footer .filter-btns .add {
+    box-shadow: 0px 4px 25px 0px #0000001A;
+    background: var(--orange);
+    border-radius: 12px;
+    padding: 8px 40px;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Myriad Pro';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 33px;
+    text-align: left;
 }
